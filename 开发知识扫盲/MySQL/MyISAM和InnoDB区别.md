@@ -1,10 +1,10 @@
-### MyISAM 和 InnoDB 区别
+# MyISAM 和 InnoDB 区别
 
-#### 事务支持
+## 事务支持
 
 myISAM 不支持事务，InnoDB有一整套完整的事务体系。
 
-#### 索引
+## 索引
 
 MyISAM和InnoDB都是使用B+树作为索引的。
 
@@ -13,7 +13,7 @@ MyISAM和InnoDB都是使用B+树作为索引的。
 - MyISAM的索引和数据文件分离。
 - InnoDB 索引就是数据。
 
-#### 锁
+## 锁
 
 MyISAM只有表级别的锁，InnoDB支持行级锁。
 
