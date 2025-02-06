@@ -60,7 +60,9 @@
 
 ### 8. 为什么wait方法不定义在Thread中 *
 
-因为wait方法通常是指Object的资源。
+因为wait方法释放的是Object的内置对象锁Monitor。
+
+如果想实现让一个线程对另外一个线程wait，可以用park()。
 
 ### 9. 可以直接调用Thread类的run方法吗
 
@@ -412,6 +414,3 @@ CallerRunPolicy。
 1. 只要涉及到可抢占，或是优先级策略，都会面临一个问题：饥饿问题。也就是低优先级的任务可能永远不会执行。这时候可能需要对优先级策略进行优化。比如为任务添加等待时间，放入Comparator的考量中。
 2. PriorityBlockingQueue是无界的，可能会出现OOM问题。重写offer方法限制插入数量即可解决问题。
 3. PriorityBlockingQueue会对元素根据优先级排序，降低效率。
-
-### 
-
